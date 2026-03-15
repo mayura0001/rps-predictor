@@ -13,3 +13,7 @@ def player(prev_play, opponent_history=[]):
 #This is Mayura Jayasinghe's Implementation for better ML based RPS player
 
 import tensorflow as tf
+import numpy as np
+
+print("TensorFlow version:", tf.__version__)
+print("NumPy version:", np.__version__)
