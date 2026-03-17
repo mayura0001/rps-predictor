@@ -2,7 +2,8 @@
 
 import random
 
-#Main Game
+# Main Game Logic
+
 def play(player1, player2, num_games, verbose=False):
     p1_prev_play = ""
     p2_prev_play = ""
@@ -44,7 +45,9 @@ def play(player1, player2, num_games, verbose=False):
 
     return (win_rate)
 
-#Players
+
+
+# Players
 
 def quincy(prev_play, counter=[0]):
 
@@ -121,3 +124,5 @@ def human(prev_opponent_play):
 
 def random_player(prev_opponent_play):
     return random.choice(['R', 'P', 'S'])
+
+

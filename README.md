@@ -8,9 +8,11 @@ use docker to efficiently manage following python ML libaries.also this help me 
 -Tensorflow
 -numpy
 
-# initial Docker commands to build using Dockerfile and run
-docker build -t rps-ml-model                                      
-docker run -it rps-ml-model
+# initial Docker commands to build using Dockerfile and run. if u run this again image only updates according to updates done to Dockerfile
+docker build -t rps-ml-model .           
+
+# force rebuild again from the begining using Dockfile
+docker build --no-cache -t rps-ml-model .
 
 # Docker Command to run with updated version of the project files
 docker run -it -v $(pwd):/app rps-ml-model
