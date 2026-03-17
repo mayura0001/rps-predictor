@@ -1,27 +1,48 @@
 # Rock Paper Scissors Predictor AI
 
-RPS predictor entirely build by Mayura Jayasinghe.
+An RPS predictor built entirely by Mayura Jayasinghe, as part of the
+[freeCodeCamp Machine Learning with Python](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/rock-paper-scissors) project.
 
-I used following boilerplate for the Rock Paper Scissors project. Instructions for building your project can be found at https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/rock-paper-scissors
+---
 
-NOTE: I used docker to efficiently manage following python ML libaries.Also this help me to learn how docker works.so i can use docker for complex projects that docker is not an option, but necessity.For simplicity reasons sometimes i run code without docker.So u can completely ignore the docker part because following libraries work lot of time without isolation.
+## Overview
 
-Tensorflow - ML libray to train the model
-Pandas - for data collection and for prapare data
+This project trains a machine learning model to predict opponent moves in
+Rock Paper Scissors using historical play data.
 
-datacollector.py - implemented to collect data from apponent bots
+---
 
+## Tech Stack
 
-# Docker Notes //still learning and not sure
+| Library | Purpose |
+|---|---|
+| TensorFlow | Train the ML prediction model |
+| Pandas | Data collection and preparation |
 
----initial Docker commands to build using Dockerfile and run. if u run this again image only updates according to updates done to Dockerfile.
+**`datacollector.py`** — Collects move data from opponent bots to build the training dataset.
 
-docker build -t rps-ml-model .           
+---
 
----force rebuild again from the begining using Dockfile.
+## Docker Setup
 
+Docker is used here to manage Python ML library dependencies in an isolated
+environment — and as a learning exercise for containerized workflows.
+
+> **Note:** The libraries also work fine without Docker, so the Docker setup
+> is entirely optional.
+
+### Commands
+```bash
+# Build the image from Dockerfile
+docker build -t rps-ml-model .
+
+# Force a clean rebuild from scratch (ignores cache)
 docker build --no-cache -t rps-ml-model .
 
----Docker Command to run with updated version of the project files.
+# Run the container, mounting your local project files
+docker run -it -v "$(pwd)":/app rps-ml-model
+```
 
-docker run -it -v $(pwd):/app rps-ml-model
+> The `-v "$(pwd)":/app` flag mounts your current directory into the
+> container, so any file changes you make locally are reflected immediately
+> without needing to rebuild the image.
