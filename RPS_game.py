@@ -2,7 +2,7 @@
 
 import random
 
-
+#Main Game
 def play(player1, player2, num_games, verbose=False):
     p1_prev_play = ""
     p2_prev_play = ""
@@ -44,6 +44,7 @@ def play(player1, player2, num_games, verbose=False):
 
     return (win_rate)
 
+#Players
 
 def quincy(prev_play, counter=[0]):
 
